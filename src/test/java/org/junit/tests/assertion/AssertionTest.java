@@ -22,6 +22,7 @@ import org.junit.ComparisonFailure;
 import org.junit.Test;
 import org.junit.function.ThrowingRunnable;
 import org.junit.internal.ArrayComparisonFailure;
+import java.util.*;
 
 /**
  * Tests for {@link org.junit.Assert}
@@ -685,6 +686,13 @@ public class AssertionTest {
         }
         throw new AssertionError(ASSERTION_ERROR_EXPECTED);
     }
+    
+    @Test
+    public void assertGreaterThanTesting() {
+        String a = "a";
+        String b = "b";
+        Assert.assertGreaterThan(a, b, compare(a, b));
+    }
 
     @Test
     public void assertThatIncludesDescriptionOfTestedValueInErrorMessage() {
@@ -701,6 +709,7 @@ public class AssertionTest {
         }
         throw new AssertionError(ASSERTION_ERROR_EXPECTED);
     }
+    
 
     @Test
     public void assertThatIncludesAdvancedMismatch() {
@@ -845,6 +854,7 @@ public class AssertionTest {
     @Test(expected = AssertionError.class)
     public void assertNotEqualsIgnoresFloatDeltaOnNaN() {
         assertNotEquals(Float.NaN, Float.NaN, 1f);
+<<<<<<< HEAD
     }
 
     @Test(expected = AssertionError.class)
@@ -1002,4 +1012,7 @@ public class AssertionTest {
             }
         };
     }
+=======
+    } 
+>>>>>>> greater
 }
