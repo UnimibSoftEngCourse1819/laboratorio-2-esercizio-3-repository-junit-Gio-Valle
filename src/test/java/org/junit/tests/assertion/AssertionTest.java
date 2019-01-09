@@ -522,8 +522,19 @@ public class AssertionTest {
     public void assertGreaterThanTesting() {
         String a = "a";
         String b = "b";
-        Assert.assertGreaterThan(a, b, compare(a, b));
+        Assert.assertGreaterThan(a, b, a.compareTo(b));
     }
+    
+    @Test
+    public void assertGreaterThanTestingPrimitives() {
+        int a = 1;
+        int b = 2;
+        Integer c = a;
+        Integer d = b;
+        Assert.assertGreaterThan(a, b, c.compareTo(d));
+    }
+    
+    
 
     @Test
     public void assertThatIncludesDescriptionOfTestedValueInErrorMessage() {
